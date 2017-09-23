@@ -63,7 +63,7 @@ src/ros_mono.cc
 )
 
 target_link_libraries(Mono
-${LIBS}
+${LIBS} /usr/local/lib/libcv_bridge.so
 )
 
 # Node for monocular camera (Augmented Reality Demo)
@@ -74,7 +74,7 @@ src/AR/ViewerAR.cc
 )
 
 target_link_libraries(MonoAR
-${LIBS}
+${LIBS} /usr/local/lib/libcv_bridge.so
 )
 
 # Node for stereo camera
@@ -83,7 +83,7 @@ src/ros_stereo.cc
 )
 
 target_link_libraries(Stereo
-${LIBS}
+${LIBS} /usr/local/lib/libcv_bridge.so
 )
 
 # Node for RGB-D camera
@@ -92,6 +92,6 @@ src/ros_rgbd.cc
 )
 
 target_link_libraries(RGBD
-${LIBS}
+${LIBS} /usr/local/lib/libcv_bridge.so
 )
 
