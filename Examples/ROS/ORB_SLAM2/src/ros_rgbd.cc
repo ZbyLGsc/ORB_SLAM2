@@ -143,6 +143,11 @@ void ImageGrabber::GrabRGBD(const sensor_msgs::ImageConstPtr& msgRGB,
                                   cv_ptrRGB->header.stamp.toSec());
 
   /*convert opencv Mat to poseStamped*/
+  if(pose.size[0]==0)
+  {
+    cout<<"lost tracking, try to relocalize "<<endl;
+    return;
+  }
   Eigen::Matrix3f rotation;
   rotation << pose.at<float>(0, 0), pose.at<float>(0, 1), pose.at<float>(0, 2),
       pose.at<float>(1, 0), pose.at<float>(1, 1), pose.at<float>(1, 2),
